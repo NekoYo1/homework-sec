@@ -67,5 +67,17 @@
 
     UDP — не использует TCP-флаги. Открытые порты чаще молчат, закрытые возвращают ICMP Port Unreachable.
 
+Сеансы сканирования записаны в Wireshark и сохранены в виде файлов:
+
+    syn_scan.pcapng — режим SYN;
+
+    fin_scan.pcapng — режим FIN;
+
+    xmas_scan.pcapng — режим Xmas;
+
+    udp_scan.pcapng — режим UDP.
+
+Фильтр захвата: host <IP_metasploitable>. Для разбора использовались фильтры tcp.flags.syn, tcp.flags.reset, tcp.flags.fin, tcp.flags.push, tcp.flags.urg, udp, icmp.type == 3.
+
 ---
 
