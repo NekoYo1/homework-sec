@@ -67,14 +67,21 @@
 
     UDP — не использует TCP-флаги. Открытые порты чаще молчат, закрытые возвращают ICMP Port Unreachable.
 
-Режим	Фильтр в Wireshark
-SYN	tcp.flags.syn == 1 && tcp.flags.ack == 0
-SYN/ACK	tcp.flags.syn == 1 && tcp.flags.ack == 1
-RST	tcp.flags.reset == 1
-FIN	tcp.flags.fin == 1
-Xmas	tcp.flags.fin == 1 && tcp.flags.push == 1 && tcp.flags.urg == 1
-UDP	udp
-ICMP	icmp.type == 3
+
+
+    SYN — tcp.flags.syn == 1 && tcp.flags.ack == 0
+
+    SYN/ACK — tcp.flags.syn == 1 && tcp.flags.ack == 1
+
+    RST — tcp.flags.reset == 1
+
+    FIN — tcp.flags.fin == 1
+
+    Xmas — tcp.flags.fin == 1 && tcp.flags.push == 1 && tcp.flags.urg == 1
+
+    UDP — udp
+
+    ICMP — icmp.type == 3
 
 Фильтр захвата: host <IP_metasploitable>. Для разбора использовались фильтры tcp.flags.syn, tcp.flags.reset, tcp.flags.fin, tcp.flags.push, tcp.flags.urg, udp, icmp.type == 3.
 
